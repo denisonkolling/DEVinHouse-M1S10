@@ -6,15 +6,27 @@ const NewMedicineForm = () => {
   const [list, setList] = useState([])
 
 	const [medicine, setMedicine] = useState({
+    id: '',
 		name: '',
 		laboratory: '',
 		price: '',
+    favorite: false,
 	});
 
 	const handleChange = (e) => {
+    const value = e.target.value;
+		setMedicine({ ...medicine, [e.target.name]: value });
 	};
 
 	const handleSubmit = (e) => {
+    e.preventDefault();
+		console.log(medicine);
+    localStorage.setItem(medicine, JSON.stringify(medicine));
+		setMedicine({
+			name: '',
+			laboratory: '',
+			price: '',
+		});
 	};
 
 	return (
