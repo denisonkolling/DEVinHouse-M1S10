@@ -3,6 +3,7 @@ import { createContext, useState } from 'react';
 export const MedicineContext = createContext();
 
 export const MedicineContextProvider = ({ children }) => {
+  
 	const [listMedicine, setListMedicine] = useState([]);
 
 	const AddMedicine = (name, laboratory, price) => {
