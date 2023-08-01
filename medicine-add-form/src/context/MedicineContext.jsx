@@ -26,7 +26,10 @@ export const MedicineContextProvider = ({ children }) => {
 		alert('Medicine added successfuly!');
 	};
 
-	const favoriteMedicine = (id) => {};
+	const favoriteMedicine = (id) => {
+    //Função favoritar medicamento
+
+  };
 
 	return (
 		<MedicineContext.Provider
