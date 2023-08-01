@@ -26,7 +26,7 @@ const Header = () => {
 										autoComplete="off"
 										type="search"
 										className="form-control rounded"
-										placeholder="O que você deseja encontrar?"
+										placeholder="Search everything online and in store..."
 									/>
 									<span className="input-group-text border-0 d-none d-lg-flex">
 										<a href="">

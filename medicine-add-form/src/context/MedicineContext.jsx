@@ -27,9 +27,8 @@ export const MedicineContextProvider = ({ children }) => {
 	};
 
 	const favoriteMedicine = (id) => {
-    //Função favoritar medicamento
-
-  };
+		//Função favoritar medicamento
+	};
 
 	return (
 		<MedicineContext.Provider
