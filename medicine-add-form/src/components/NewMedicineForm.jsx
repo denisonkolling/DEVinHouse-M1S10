@@ -1,32 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
+import { MedicineContext } from '../context/MedicineContext';
 
 const NewMedicineForm = () => {
+	
+	const { AddMedicine } = useContext(MedicineContext);
 
-  const [list, setList] = useState([])
+	const [list, setList] = useState([]);
 
 	const [medicine, setMedicine] = useState({
-    id: '',
+		id: '',
 		name: '',
 		laboratory: '',
-		price: '',
-    favorite: false,
+		price: 0,
+		favorite: false,
 	});
 
 	const handleChange = (e) => {
-    const value = e.target.value;
+		const value = e.target.value;
 		setMedicine({ ...medicine, [e.target.name]: value });
 	};
 
 	const handleSubmit = (e) => {
-    e.preventDefault();
-		console.log(medicine);
-    localStorage.setItem(medicine, JSON.stringify(medicine));
-		setMedicine({
-			name: '',
-			laboratory: '',
-			price: '',
-		});
+		e.preventDefault();
+		AddMedicine(medicine.name, medicine.laboratory, medicine.price);
+		
+		localStorage.setItem(medicine, JSON.stringify(medicine));
+		setMedicine({name: '', laboratory: '', price: '',	});
 	};
 
 	return (
@@ -66,9 +66,6 @@ const NewMedicineForm = () => {
 					<button className="btn btn-primary m-2 ">Add</button>
 				</div>
 			</form>
-			<span>{medicine.name}</span>
-			<span>{medicine.laboratory}</span>
-			<span>{medicine.price}</span>
 		</div>
 	);
 };
