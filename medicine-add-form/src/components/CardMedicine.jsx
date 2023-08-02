@@ -11,7 +11,7 @@ const CardMedicine = ({ medicine }) => {
 	return (
 		<div className="card col-2 m-4">
 			<div className="card-body">
-			<button className='btn text-danger' onClick={() => FavoriteMedicine(medicine.id)} >
+			<button className={ medicine.favorite ? 'btn text-danger' : 'btn text-muted'} onClick={() => FavoriteMedicine(medicine.id)}>
 			<FontAwesomeIcon icon={faHeart} /></button>
 				<img
 					className="card-img-top"
